@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '../../interfaces/location.interface';
+import { LocationService } from '../../services/location.service';
 
 @Component({
   selector: 'app-location-table',
@@ -7,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class LocationTableComponent implements OnInit {
-
-  constructor() { }
+  searchError: Boolean = false;
+  locations: Location[] = [];
+  constructor(private locationService:LocationService) { }
 
   ngOnInit(): void {
+    this.locationService.getLocation().subscribe({
+      next: (response)=>{
+        this.locations = response.locations
+      },
+      error: ()=>{
+        this.searchError = true;
+        this.locations = []
+      }
+    })
   }
 
 }

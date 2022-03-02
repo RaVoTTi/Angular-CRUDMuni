@@ -4,10 +4,8 @@ import { LocationModule } from './location/location.module';
 import { AppRoutingModule } from './app-routing.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
-import { AppBarComponent } from './shared/app-bar/app-bar.component';
-import { LocationViewComponent } from './location/pages/location-view/location-view.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +14,7 @@ import { LocationViewComponent } from './location/pages/location-view/location-v
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     LocationModule,
     DivisionModule,

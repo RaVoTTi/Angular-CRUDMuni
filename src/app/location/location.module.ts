@@ -2,7 +2,10 @@ import { LocationViewComponent } from './pages/location-view/location-view.compo
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LocationTableComponent } from './components/location-table/location-table.component';
-import { LocationAddComponent } from './components/location-add/location-add.component';
+import { LocationFormComponent } from './components/location-form/location-form.component';
+import { Router, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { LocationEditComponent } from './pages/location-edit/location-edit.component';
 
 
 
@@ -10,10 +13,14 @@ import { LocationAddComponent } from './components/location-add/location-add.com
   declarations: [
     LocationViewComponent,
     LocationTableComponent,
-    LocationAddComponent
+    LocationFormComponent,
+    LocationEditComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule,
+
   ],
   exports:[
     LocationViewComponent

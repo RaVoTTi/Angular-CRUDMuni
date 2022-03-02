@@ -4,6 +4,7 @@
   "newProjectRoot": "projects",
   "projects": {
     "crud-muni": {
+
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
